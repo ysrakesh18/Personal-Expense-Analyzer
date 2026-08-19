@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personal Expense Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>💰 Personal Expense Analyzer</h1>
+        <p>Track and understand your daily expenses</p>
+    </header>
+
+
+    <main>
+
+        <!-- Summary -->
+
+        <section class="summary">
+
+            <div class="card">
+                <h3>Total Spending</h3>
+                <p id="total">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="count">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Average Expense</h3>
+                <p id="average">₹0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Add Expense -->
+
+        <section class="expense-form">
+
+            <h2>Add Expense</h2>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="expenseName"
+                    placeholder="Expense name"
+                >
+
+                <input
+                    type="number"
+                    id="expenseAmount"
+                    placeholder="Amount"
+                >
+
+                <select id="expenseCategory">
+
+                    <option value="">Select Category</option>
+
+                    <option value="Food">🍔 Food</option>
+
+                    <option value="Travel">🚗 Travel</option>
+
+                    <option value="Shopping">🛍️ Shopping</option>
+
+                    <option value="Education">📚 Education</option>
+
+                    <option value="Entertainment">🎬 Entertainment</option>
+
+                    <option value="Other">📦 Other</option>
+
+                </select>
+
+                <input
+                    type="date"
+                    id="expenseDate"
+                >
+
+            </div>
+
+            <button onclick="addExpense()">
+                Add Expense
+            </button>
+
+        </section>
+
+
+        <!-- Expense List -->
+
+        <section class="expense-list">
+
+            <div class="list-header">
+
+                <h2>My Expenses</h2>
+
+                <select id="filter" onchange="displayExpenses()">
+
+                    <option value="All">All Categories</option>
+
+                    <option value="Food">Food</option>
+
+                    <option value="Travel">Travel</option>
+
+                    <option value="Shopping">Shopping</option>
+
+                    <option value="Education">Education</option>
+
+                    <option value="Entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+            </div>
+
+
+            <div id="expenses">
+
+                <p class="empty">
+                    No expenses added yet.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Category Analysis -->
+
+        <section class="analysis">
+
+            <h2>Spending by Category</h2>
+
+            <div id="categoryAnalysis">
+
+                <p>No data available.</p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Personal Expense Analyzer © 2026
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
